@@ -1,17 +1,4 @@
 <?php
-/**
- * @package v4Notification
- * @version 0.0.1
- */
-/*
-Plugin Name: v4Notification
-Plugin URI: 
-Description: V4 Notification allows your users to receive notification when you post something.
-Author: ItsValentin
-Version: 0.0.1
-Author URI: https://itsvalentin.com
-*/
-ERROR_REPORTING(E_ALL);
 
 global $wpdb;
 $posts = $wpdb->get_results("SELECT id,post_title, guid FROM ".$wpdb->prefix."posts WHERE post_type = 'post' AND post_status = 'publish' ORDER BY id DESC LIMIT 1");
