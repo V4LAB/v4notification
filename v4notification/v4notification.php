@@ -16,6 +16,7 @@ global $wpdb;
 
 add_filter( 'init', function( $template ) {
     if ( isset( $_GET['vlab_json_notification'] ) ) {
+    	$vlab_json = 'yes';
         include plugin_dir_path( __FILE__ ) . 'vlab_json.php';
         die;
     }

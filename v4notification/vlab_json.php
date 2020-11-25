@@ -1,5 +1,5 @@
 <?php
-
+if(!empty($vlab_json)){
 global $wpdb;
 $posts = $wpdb->get_results("SELECT id,post_title, guid FROM ".$wpdb->prefix."posts WHERE post_type = 'post' AND post_status = 'publish' ORDER BY id DESC LIMIT 1");
 if(empty($posts)){
@@ -33,3 +33,4 @@ if(empty($last_post)){
 
 header('Content-Type: application/json');
 echo json_encode($last_post);
+}
